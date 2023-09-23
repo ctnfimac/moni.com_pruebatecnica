@@ -1,0 +1,31 @@
+version: '3.3'
+
+services:
+  web:
+    container_name: moni.web
+    build: ./source
+    command: python /usr/src/source/manage.py runserver 0.0.0.0:8000
+    restart: always
+    volumes:
+      - ./source/:/usr/src/source/
+    ports:
+      - 8000:8000
+    depends_on:
+      - database
+
+
+  database:
+    image: postgres
+    container_name: moni.database
+    restart: always
+    environment:
+      POSTGRES_DB: monidb
+      POSTGRES_PASSWORD: moni.com
+      POSTGRES_USER: moni
+    ports:
+      - "3009:5432"
+    volumes:
+      - ./postgres_moni_data:/var/lib/postgresql/data/
+
+volumes:
+  postgres_moni_data:
