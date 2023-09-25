@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main %}
+<section class="prestamo">
+    <div class="prestamo__lateralIzquierdo" style="background-image: url({% static 'img/prestamo/background-login.webp'%}); background-repeat: no-repeat; background-size: 70% 100%; background-position: center right;">
+        <img class="prestamo__logo" src="{% static 'img/prestamo/logo-slogan-blanco.webp' %}" alt="Logi de Moni.com">
+        <img class="prestamo__monipose" src="{% static 'img/prestamo/moni-pose.svg' %}" alt="Moni Pose">
+    </div>
+    <div class="prestamo__lateralDerecho">
+        <h2 class="prestamo__titulo">MONI</h2>
+        <h3 class="prestamo__subtitulo">¿Queres solicitar un prestamo?</h3>
+        <h3 class="prestamo__tituloForm">Completa el siguiente formulario</h3>
+        <form action="" class="prestamo__formulario">
+            <div class="prestamo__formulario--item">
+                <label for="dni">DNI:</label>
+                <input type="text" id="dni" > <!--placeholder="Ingrese el DNI"-->
+            </div>
+            <div class="prestamo__formulario--item">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" > <!--placeholder="Ingrese su nombre"-->
+            </div>
+            <div class="prestamo__formulario--item">
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" > <!--placeholder="Ingrese el apellido"-->
+            </div>
+            <div class="prestamo__formulario--item">
+                <label for="genero">Género:</label>
+                <select name="select" id="genero">
+                    <option value="value1">Value 1</option>
+                    <option value="value2" selected>Value 2</option>
+                    </select>
+            </div>
+            <div class="prestamo__formulario--item">
+                <label for="email">Email:</label>
+                <input type="email" id="email" > <!--placeholder="Ingrese el email"-->
+            </div>
+            <div class="prestamo__formulario--item">
+                <label for="monto">Monto Solicitado:</label>
+                <input type="number" id="monto" > <!--placeholder="Ingrese el monto solicitado"-->
+            </div>
+            <div class="prestamo__formulario--item">
+                <button class="prestamo__submit" type="submit">Solicitar</button>
+            </div>
+        </form>
+    </div>
+    </section>
+    
+{% endblock main %}
