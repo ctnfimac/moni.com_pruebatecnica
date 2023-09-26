@@ -1,0 +1,20 @@
+[
+{
+    "model": "web.genero",
+    "pk": 1,
+    "fields": {
+        "tipo": "Masculino",
+        "fecha_de_alta": "2023-09-25T20:21:19.439Z",
+        "fecha_de_modificacion": "2023-09-25T20:21:19.439Z"
+    }
+},
+{
+    "model": "web.genero",
+    "pk": 2,
+    "fields": {
+        "tipo": "Femenino",
+        "fecha_de_alta": "2023-09-25T20:21:22.955Z",
+        "fecha_de_modificacion": "2023-09-25T20:21:22.955Z"
+    }
+}
+]

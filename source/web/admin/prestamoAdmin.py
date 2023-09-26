@@ -3,4 +3,4 @@ from web.models.prestamo import Prestamo
 
 @admin.register(Prestamo)
 class PrestamoAdmin(admin.ModelAdmin):
-    pass
+    list_display = ['id','usuario','monto','aceptado','fecha_de_alta','fecha_de_modificacion']

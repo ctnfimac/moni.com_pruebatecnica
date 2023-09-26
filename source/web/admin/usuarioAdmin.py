@@ -3,4 +3,4 @@ from web.models.usuario import Usuario
 
 @admin.register(Usuario)
 class UsuarioAdmin(admin.ModelAdmin):
-    pass
+    list_display = ['dni','nombre','apellido','email','genero','fecha_de_alta','fecha_de_modificacion']

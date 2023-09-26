@@ -11,39 +11,19 @@
         <h2 class="prestamo__titulo">MONI</h2>
         <h3 class="prestamo__subtitulo">¿Queres solicitar un prestamo?</h3>
         <h3 class="prestamo__tituloForm">Completa el siguiente formulario</h3>
-        <form action="" class="prestamo__formulario">
-            <div class="prestamo__formulario--item">
-                <label for="dni">DNI:</label>
-                <input type="text" id="dni" > <!--placeholder="Ingrese el DNI"-->
-            </div>
-            <div class="prestamo__formulario--item">
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" > <!--placeholder="Ingrese su nombre"-->
-            </div>
-            <div class="prestamo__formulario--item">
-                <label for="apellido">Apellido:</label>
-                <input type="text" id="apellido" > <!--placeholder="Ingrese el apellido"-->
-            </div>
-            <div class="prestamo__formulario--item">
-                <label for="genero">Género:</label>
-                <select name="select" id="genero">
-                    <option value="value1">Value 1</option>
-                    <option value="value2" selected>Value 2</option>
-                    </select>
-            </div>
-            <div class="prestamo__formulario--item">
-                <label for="email">Email:</label>
-                <input type="email" id="email" > <!--placeholder="Ingrese el email"-->
-            </div>
-            <div class="prestamo__formulario--item">
-                <label for="monto">Monto Solicitado:</label>
-                <input type="number" id="monto" > <!--placeholder="Ingrese el monto solicitado"-->
-            </div>
+        <form action="{% url 'web:solicitar_prestamo' %}" method="POST" id="prestamo__formulario" class="prestamo__formulario">{% csrf_token %}
+            {% for fila in prestamoForm %}
+                <div class="prestamo__formulario--item">
+                    {{ fila.label_tag }}
+                    {{ fila }}
+                </div>
+            {% endfor %}
+            <div class="prestamo__formulario--error" id="prestamo_mensaje"></div>
             <div class="prestamo__formulario--item">
                 <button class="prestamo__submit" type="submit">Solicitar</button>
-            </div>
+            </div> 
         </form>
     </div>
     </section>
-    
+{{prestamoForm.media}}   
 {% endblock main %}

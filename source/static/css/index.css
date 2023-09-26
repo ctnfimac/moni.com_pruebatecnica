@@ -82,6 +82,17 @@ body{
     margin-bottom: 25px;
 }
 
+.prestamo__formulario--error{
+    color: #fff;
+    background-color: lightgray;
+    text-align: center;
+    font-size: .8em;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: none;
+}
+
 .prestamo__formulario--item label{
     color: gray;
     font-size: .9em;
@@ -93,6 +104,12 @@ body{
     border-bottom: 1px solid lightgray;
     border-radius: 3px;
     padding: 5px;
+    font-weight: bold;
+    color: rgb(43, 133, 207);
+}
+
+input:focus{
+    outline: none;
 }
 
 .prestamo__formulario--item select{
