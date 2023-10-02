@@ -37,9 +37,22 @@ SECRET_KEY=django-insecure-#qd+)k&ts&%l_d$w+*z^0mqkog$owc0%^+#7+q5nmlwc+jd1^3
 docker-compose up
 ```
 
-5) Cargo los géneros para las pruebas
+5) Corro los migrate
+```
+docker exec moni.web python manage.py migrate
+```
+
+6) Cargo los generos para las pruebas
 ```
 docker exec moni.web python manage.py loaddata web/fixture/Genero.json
+```
+
+7) Creo un usuario administrador
+```
+primero entro al contendor:
+ docker exec -ti moni.web /bin/bash
+ejecuto y sigo los pasos:
+ python manage.py createsuperuser
 ```
 
 Vista para realizar el prestamo
