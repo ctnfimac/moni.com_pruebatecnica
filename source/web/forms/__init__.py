@@ -1,1 +1,2 @@
 from .prestamoForm import PrestamoForm
+from .prestamoEditarForm import PrestamoEditarForm

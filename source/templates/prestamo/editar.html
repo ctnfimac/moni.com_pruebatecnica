@@ -1,0 +1,58 @@
+{% extends 'base_admin.html' %}
+{% load static %}
+
+{% block contenido %}
+<section class="prestamo_editar"> 
+    <h1>Editando el Prestamo</h1>
+    <div class="prestamo_editar__contenedor">
+        <form method="POST"  class="prestamo__formulario" id="prestamoeditar_formulario">{% csrf_token %}
+            <div class="prestamo__formulario--item">
+                <label for="dni">Dni</label>
+                <input type="text" value="{{prestamo.usuario.dni}}" style="color: gray;" id="dni" name="dni" readonly>
+            </div>
+            <div class="prestamo__formulario--item">
+                <label for="nombre">Nombre</label>
+                <input type="text" value="{{prestamo.usuario.nombre}}" style="color: gray;" id="nombre" name="nombre" readonly>
+            </div>
+            <div class="prestamo__formulario--item">
+                <label for="apellido">Apellido</label>
+                <input type="text" value="{{prestamo.usuario.apellido}}" style="color: gray;" id="apellido" name="apellido" readonly>
+            </div>
+            <div class="prestamo__formulario--item">
+                <label for="email">Email</label>
+                <input type="email" value="{{prestamo.usuario.email}}" style="color: gray;" id="email" name="email" readonly>
+            </div>
+            <div class="prestamo__formulario--item">
+                <label for="genero">Género</label>
+                <input type="text" value="{{prestamo.usuario.genero.tipo}}" style="color: gray;" id="genero" name="genero" readonly>
+            </div>
+            <div class="prestamo__formulario--item">
+                <label for="monto">Monto</label>
+                <input type="text" value="{{prestamo.monto}}" id="monto" name="monto">
+            </div>
+            <div class="prestamo__formulario--item" style="position: relative;">
+                <label for="aceptado_auxiliar">Aceptado</label>
+                {% if prestamo.aceptado %}
+                <input 
+                    type="checkbox" 
+                    id="aceptado_auxiliar" name="aceptado_auxiliar" 
+                    class="checkbox_aceptado"
+                    checked  
+                >
+                {% else %}
+                <input 
+                    type="checkbox" 
+                    id="aceptado_auxiliar" name="aceptado_auxiliar" 
+                    class="checkbox_aceptado"
+                >
+                {% endif %}
+               
+            </div>
+            <div class="prestamo__formulario--item">
+                <button class="prestamo__submit" type="submit">Editar</button>
+            </div> 
+        </form>
+    </div>
+</section>
+{{form.media}}
+{% endblock contenido %}

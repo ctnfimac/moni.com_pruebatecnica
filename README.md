@@ -42,7 +42,22 @@ docker-compose up
 docker exec moni.web python manage.py loaddata web/fixture/Genero.json
 ```
 
-Para ejecutar las pruebas unitarias:
+Vista para realizar el prestamo
+```
+http://127.0.0.1:8000/
+```
+
+Vista del Administrador de prestamos(hay que estar logueado)
+```
+http://127.0.0.1:8000/administrador
+```
+
+
+Para ejecutar los test unitarios:
 ```
 docker exec moni.web python manage.py test
 ```
+
+
+### Diagrama Entidad Relación Sugerido e implementado
+![moni_der](https://github.com/ctnfimac/app.web-con-PHP-mvc/assets/24881247/3468958b-7630-44e2-b32b-162d1ed5d6dc)

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Administración{% endblock %}
+{% block extrastyle%} 
+    <link rel="stylesheet" href="{% static 'css/administrador.css' %}">
+{% endblock extrastyle %}
+
+
+{% block main %}
+<div class="wrapper">
+    <div class="sidebar">
+        <h2>MoniAdmin</h2>
+        <ul>
+            <li><a href="{% url 'web:prestamo' %}">Home</a></li>
+            <li><a href="{% url 'web:administrador' %}">Prestamos</a></li>
+        </ul> 
+    </div>
+    <div class="main_content">
+        <div class="info">
+           {% block contenido%}
+           {% endblock contenido%}
+      </div>
+    </div>
+</div>
+{% endblock main %}

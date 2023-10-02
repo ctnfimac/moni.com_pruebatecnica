@@ -1,0 +1,24 @@
+{% extends 'base_admin.html' %}
+
+{% load static %}
+
+
+{% block contenido %}
+<section class="prestamo_elmininar">
+    <h1>¿Desea eliminar este Prestamo?</h1>
+    <h5>Tenga en cuenta que se eliminará el prestamo pero no los datos del usuario</h5>
+    <ul>
+        <li><span>Dni:</span> {{prestamo.usuario.dni}}</li>
+        <li><span>Email:</span> {{prestamo.usuario.email}}</li>
+        <li><span>Nombre:</span> {{prestamo.usuario.nombre}}</li>
+        <li><span>Apellido:</span> {{prestamo.usuario.apellido}}</li>
+        <li><span>Genero:</span> {{prestamo.usuario.genero.tipo}}</li>
+        <li><span>Monto:</span> {{prestamo.monto}}</li>
+        <li><span>Estado:</span> {% if fila.aceptado %} Aceptado {% else %} Rechazado {% endif %}</li>
+    </ul>
+    <form method="POST">{% csrf_token %}
+        <button type="submit" class="alert button">Confirmar</button>
+        <a href="{% url 'web:administrador' %}">Cancelar</a>
+    </form>
+</section>
+{% endblock contenido %}

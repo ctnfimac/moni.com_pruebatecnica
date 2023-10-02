@@ -1,0 +1,175 @@
+body{
+  background-color: #eee;
+}
+
+h1{
+  font-size: 1.5em;
+  color: #444;
+  margin-top: 50px;
+}
+
+.wrapper .main_content{
+  width: 100%;
+  margin-left: 200px;
+}
+
+
+.wrapper{
+    display: flex;
+    position: relative;
+}
+  
+.wrapper .sidebar{
+    width: 180px;
+    height: 100%;
+    background: #313a46;
+    padding: 30px 0px;
+    position: fixed;
+}
+
+
+
+/*
+ Estilos de la tabla de prestamos
+*/
+.prestamo_admin{ 
+	width: 750px; 
+	border-collapse: collapse; 
+}
+
+table, th, td {
+  border:1px solid lightgray;
+  white-space: nowrap;
+}
+
+tr th { 
+	background: #bfd8f8; 
+  color: #444;
+}
+
+td, th { 
+	padding: 10px; 
+	text-align: left; 
+  color: #568dd4;
+  font-size: .9em;
+}
+
+.prestamo_admin__contentbtn{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+}
+
+.prestamo_admin--btn{
+  display: block;
+  background-color: gray;
+  width: 45%;
+  padding: 8px;
+  padding-right: 13px;
+  border-radius: 5px;
+  font-size: 10px;
+  text-decoration: none;
+  text-align: center;
+  border: none;
+
+}
+
+.prestamo_admin .btn-eliminar{
+  background-color: tomato;
+  color: #eee;
+}
+
+.prestamo_admin .btn-editar{
+  background-color: yellow;
+  color: #444;
+}
+
+
+.wrapper .sidebar h2{
+    color: #d6edec;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.wrapper .sidebar ul li{
+  padding: 15px;
+  border-bottom: 1px solid #bdb8d7;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  border-top: 1px solid rgba(255,255,255,0.05);
+}    
+  
+.wrapper .sidebar ul li a{
+  color: #bdb8d7;
+  display: block;
+  text-decoration: none;
+  padding-left: 10px;
+}
+
+/*
+ Estilos de aceptar eliminar prestamo
+*/
+.prestamo_elmininar{
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 6px;
+  width: 100%;
+  max-width: 600px;
+  margin-top: 20px;
+}
+
+.prestamo_elmininar h5{
+  color: #444;
+  font-size: 1em;
+  font-weight: 100;
+}
+
+.prestamo_elmininar ul{
+  list-style: none;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: gray;
+}
+
+.prestamo_elmininar ul span{
+  color: black;
+}
+
+.prestamo_elmininar button, .prestamo_elmininar a{
+  background-color: #2ecc71;
+  color: #fff;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.prestamo_elmininar a{
+  background-color: tomato;
+  text-decoration: none;
+}
+
+/*
+ Estilos de editar el prestamo
+*/
+
+
+.prestamo_editar__contenedor{
+  max-width: 600px;
+  margin-top: 50px;
+  background-color: #eee;
+}
+
+.prestamo_editar__contenedor input{
+  background-color: #eee;
+}
+
+.prestamo_editar .prestamo__submit{
+  width: 100%;
+}
+
+.prestamo_editar__contenedor .checkbox_aceptado{
+  position: absolute;
+  left: 80px;
+}
